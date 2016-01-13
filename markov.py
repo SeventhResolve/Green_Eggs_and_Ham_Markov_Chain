@@ -54,9 +54,15 @@ def make_text(chains):
     dict_keys = chains.keys()
     random_starting_key = choice(dict_keys)
 
-    print random_starting_key
-
-
+    text = " ".join(random_starting_key)
+    while random_starting_key in chains:
+        items_in_value = chains[random_starting_key]
+        random_item_in_value = choice(items_in_value)
+        text = text + " " + random_item_in_value
+        random_starting_key = (random_starting_key[1], random_item_in_value)
+        # print random_starting_key
+        
+        # somewhere in code random_starting_key reassigned/updated to new tuple
 
     # your code goes here
     # ^ randomly select a key
