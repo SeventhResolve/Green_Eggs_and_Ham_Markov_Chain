@@ -40,20 +40,10 @@ def make_chains(text_string):
             chains[first_and_second_words].append(third_word)
         else:
             chains[first_and_second_words] = [third_word]
-
-
-        # if first_and_second_words == (word_in_text[each_word], word_in_text[each_word + 1]):
-        #     chains[first_and_second_words] = bigram_third_word.append(word_in_text[each_word + 2])
-        # chains[first_and_second_words] = bigram_third_word
-    #     if chains.get(first_and_second_words) != None:
-    #         for each_word in range(len(word_in_text) - 2):
-    #             third_word = word_in_text[each_word + 2]
-    #         bigram_third_word.append(third_word)
-    
     
     
 
-    print chains
+    return chains
 
 
 def make_text(chains):
@@ -61,8 +51,19 @@ def make_text(chains):
 
     text = ""
 
-    # your code goes here
+    dict_keys = chains.keys()
+    random_starting_key = choice(dict_keys)
 
+    print random_starting_key
+
+    # your code goes here
+    # randomly select a key
+    # while loop: randomly select an item from the value associated with that key
+    # search for selected item in first position of dictionary keys
+    # loop back to line 56 and keep doing it 
+        #until you find Sam, I tuple
+        #and print am?
+        #break the loop
     return text
 
 
