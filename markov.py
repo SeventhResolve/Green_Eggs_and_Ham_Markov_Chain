@@ -56,8 +56,10 @@ def make_text(chains):
 
     print random_starting_key
 
+
+
     # your code goes here
-    # randomly select a key
+    # ^ randomly select a key
     # while loop: randomly select an item from the value associated with that key
     # search for selected item in first position of dictionary keys
     # loop back to line 56 and keep doing it 
