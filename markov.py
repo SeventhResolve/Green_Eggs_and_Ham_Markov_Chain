@@ -29,15 +29,21 @@ def make_chains(text_string):
     """
 
     chains = {}
-    bigram_third_word = []
 
 
     word_in_text = input_text.split()
 
     for each_word in range(len(word_in_text) - 2):
-        first_and_second_words = word_in_text[each_word], word_in_text[each_word + 1]
-        if first_and_second_words == (word_in_text[0], word_in_text[1]):
-            chains[first_and_second_words] = bigram_third_word.append(word_in_text[2])
+        first_and_second_words = (word_in_text[each_word], word_in_text[each_word + 1])
+        third_word = word_in_text[each_word + 2]
+        if first_and_second_words in chains:
+            chains[first_and_second_words].append(third_word)
+        else:
+            chains[first_and_second_words] = [third_word]
+
+
+        # if first_and_second_words == (word_in_text[each_word], word_in_text[each_word + 1]):
+        #     chains[first_and_second_words] = bigram_third_word.append(word_in_text[each_word + 2])
         # chains[first_and_second_words] = bigram_third_word
     #     if chains.get(first_and_second_words) != None:
     #         for each_word in range(len(word_in_text) - 2):
